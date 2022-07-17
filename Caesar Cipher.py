@@ -1,15 +1,16 @@
-alphabets="abcdefghijklmnopqrstuvwxyz"
-string_input=input("enter your message:")
-key=int(input("enter your key:")
-n=len(string_input)
-string_output=""
-for i in range(n):
-     character=string_input[i]
-     location=alphabets.find(character)
-     new_location=(location+key)%26
-     string_output+=alphabets(new_location)
-print(string_output)     
-     
+def encrypt_char(char, key):
+    return chr(ord('A') + (ord(char) - ord('A') + key) % 26
+def encrypt_message(message, key):
+    message = message.upper()
+    cipher = ''
+    for char in message:
+        if char not in ' ,.':
+            cipher += encrypt_char(char, key)
+        else:
+            cipher += char
+    return cipher
+encrypt_message("you are awesome.", 3)               
+               
      
      
      
